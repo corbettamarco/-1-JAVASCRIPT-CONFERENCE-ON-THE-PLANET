@@ -1,5 +1,6 @@
 import { QueryClient, QueryClientProvider } from "react-query";
 import "./App.css";
+import { AboveTheFold } from "./components/AboveTheFold";
 import { EventList } from "./components/EventList";
 import { Navbar } from "./components/Navbar";
 
@@ -10,6 +11,7 @@ function App() {
     <>
       <QueryClientProvider client={queryClient}>
         <Navbar />
+        <AboveTheFold/>
         <EventList />
       </QueryClientProvider>
     </>

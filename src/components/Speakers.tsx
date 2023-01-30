@@ -2,7 +2,8 @@ import {
   Card,
   CardBody,
   Center,
-  Heading, Image,
+  Heading,
+  Image,
   SimpleGrid,
   Stack,
   Text
@@ -17,7 +18,9 @@ export const Speakers = () => {
   return (
     <>
       <Center mb="1em" textColor={"white"}>
-        <Heading>SPEAKERS</Heading>
+        <Heading fontWeight={"extrabold"} letterSpacing="wide">
+          SPEAKERS
+        </Heading>
       </Center>
       <SimpleGrid spacing={2} columns={[1, 1, 3, 3, 5]}>
         {speakersQuery.data &&
@@ -33,7 +36,13 @@ export const Speakers = () => {
                 borderWidth={"1px"}
                 borderColor="white"
               >
-                <Image src={speaker.image} w="16em" h="15em" />
+                <Image
+                  borderTopRadius={"md"}
+                  src={speaker.image}
+                  w="16em"
+                  h="15em"
+                />
+
                 <CardBody>
                   <Stack mt="1" spacing="3">
                     <Heading textColor="white" size="md">

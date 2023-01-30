@@ -1,0 +1,154 @@
+{
+  "events": [
+    {
+      "id": "1",
+      "date": "February 8th 2023",
+      "tracks": [
+        {
+          "time": "8.00-9:10",
+          "title": "Doors Open",
+          "description": "Come to pick up your badge, merchandise, morning snack & coffee, tea or juice",
+          "image": "https://images.jsworldconference.com/ana_neontech_b6574e1f57.png?width=100"
+        },
+        {
+          "time": "8.00-9:10",
+          "title": "Doors Open",
+          "description": "Come to pick up your badge, merchandise, morning snack & coffee, tea or juice",
+          "image": "https://images.jsworldconference.com/ana_neontech_b6574e1f57.png?width=100"
+        },
+        {
+          "time": "8.00-9:10",
+          "title": "Doors Open",
+          "description": "Come to pick up your badge, merchandise, morning snack & coffee, tea or juice",
+          "image": "https://images.jsworldconference.com/ana_neontech_b6574e1f57.png?width=100"
+        },
+        {
+          "time": "8.00-9:10",
+          "title": "Doors Open",
+          "description": "Come to pick up your badge, merchandise, morning snack & coffee, tea or juice",
+          "image": "https://images.jsworldconference.com/ana_neontech_b6574e1f57.png?width=100"
+        },
+        {
+          "time": "8.00-9:10",
+          "title": "Doors Open",
+          "description": "Come to pick up your badge, merchandise, morning snack & coffee, tea or juice",
+          "image": "https://images.jsworldconference.com/ana_neontech_b6574e1f57.png?width=100"
+        }
+      ],
+      "speakers": [
+        {
+          "name": "Jessy The",
+          "specialization": "Frontend Developer with big interes in web3",
+          "description":"Remix Core",
+          "image": "https://images.jsworldconference.com/ana_neontech_b6574e1f57.png?width=100"
+        },
+        {
+          "name": "Simona Cotin",
+          "specialization": "Frontend Developer with big interes in web3",
+          "description":"Remix Core",
+          "image": "https://images.jsworldconference.com/ana_neontech_b6574e1f57.png?width=100"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "date": "February 9th 2023",
+      "tracks": [
+        {
+          "time": "8.00-9:10",
+          "title": "Accelerating developer experience",
+          "description": "Come to pick up your badge, merchandise, morning snack & coffee, tea or juice",
+          "image": "https://images.jsworldconference.com/ana_neontech_b6574e1f57.png?width=100"
+        },
+        {
+          "time": "8.00-9:10",
+          "title": "Doors Open",
+          "description": "Come to pick up your badge, merchandise, morning snack & coffee, tea or juice",
+          "image": "https://images.jsworldconference.com/ana_neontech_b6574e1f57.png?width=100"
+        },
+        {
+          "time": "8.00-9:10",
+          "title": "Doors Open",
+          "description": "Come to pick up your badge, merchandise, morning snack & coffee, tea or juice",
+          "image": "https://images.jsworldconference.com/ana_neontech_b6574e1f57.png?width=100"
+        },
+        {
+          "time": "8.00-9:10",
+          "title": "Doors Open",
+          "description": "Come to pick up your badge, merchandise, morning snack & coffee, tea or juice",
+          "image": "https://images.jsworldconference.com/ana_neontech_b6574e1f57.png?width=100"
+        },
+        {
+          "time": "8.00-9:10",
+          "title": "Doors Open",
+          "description": "Come to pick up your badge, merchandise, morning snack & coffee, tea or juice",
+          "image": "https://images.jsworldconference.com/ana_neontech_b6574e1f57.png?width=100"
+        }
+      ],
+      "speakers": [
+        {
+          "name": "Jessy The",
+          "specialization": "Frontend Developer with big interes in web3",
+          "description":"Remix Core",
+          "image": "https://images.jsworldconference.com/ana_neontech_b6574e1f57.png?width=100"
+        },
+        {
+          "name": "Simona Cotin",
+          "specialization": "Frontend Developer with big interes in web3",
+          "description":"Remix Core",
+          "image": "https://images.jsworldconference.com/ana_neontech_b6574e1f57.png?width=100"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "date": "February 10th 2023",
+      "tracks": [
+        {
+          "time": "8.00-9:10",
+          "title": "All About React 18",
+          "description": "Come to pick up your badge, merchandise, morning snack & coffee, tea or juice",
+          "image": "https://images.jsworldconference.com/ana_neontech_b6574e1f57.png?width=100"
+        },
+        {
+          "time": "8.00-9:10",
+          "title": "Doors Open",
+          "description": "Come to pick up your badge, merchandise, morning snack & coffee, tea or juice",
+          "image": "https://images.jsworldconference.com/ana_neontech_b6574e1f57.png?width=100"
+        },
+        {
+          "time": "8.00-9:10",
+          "title": "Doors Open",
+          "description": "Come to pick up your badge, merchandise, morning snack & coffee, tea or juice",
+          "image": "https://images.jsworldconference.com/ana_neontech_b6574e1f57.png?width=100"
+        },
+        {
+          "time": "8.00-9:10",
+          "title": "Doors Open",
+          "description": "Come to pick up your badge, merchandise, morning snack & coffee, tea or juice",
+          "image": "https://images.jsworldconference.com/ana_neontech_b6574e1f57.png?width=100"
+        },
+        {
+          "time": "8.00-9:10",
+          "title": "Doors Open",
+          "description": "Come to pick up your badge, merchandise, morning snack & coffee, tea or juice",
+          "image": "https://images.jsworldconference.com/ana_neontech_b6574e1f57.png?width=100"
+        }
+      ],
+      "speakers": [
+        {
+          "name": "Jessy The",
+          "specialization": "Frontend Developer with big interes in web3",
+          "description":"Remix Core",
+          "image": "https://images.jsworldconference.com/ana_neontech_b6574e1f57.png?width=100"
+        },
+        {
+          "name": "Simona Cotin",
+          "specialization": "Frontend Developer with big interes in web3",
+          "description":"Remix Core",
+          "image": "https://images.jsworldconference.com/ana_neontech_b6574e1f57.png?width=100"
+        }
+      ]
+    }
+  ]
+}

@@ -1,18 +1,27 @@
-import { Tab, Text, VStack } from "@chakra-ui/react";
+import { Heading, Tab, Text, VStack } from "@chakra-ui/react";
+import { DayType } from "../API/models/DayType";
 
 type SingleTabProps = {
-  singleTab: any;
+  singleTab: DayType;
   index: number;
 };
 
 export const SingleTab = ({ singleTab, index }: SingleTabProps) => {
   return (
-    
     <Tab>
-    <VStack mt="2em">
-      <Text textColor="red.500">Day {index + 1}</Text>
-      <Text textColor="#79CFAF">{singleTab && singleTab.date}</Text>
-    </VStack>
+      <VStack
+        py="1em"
+        my="0.5em"
+        _hover={{
+          bgColor: "conf.red.700",
+        }}
+        borderRadius="xl"
+      >
+        <Heading w="25vw" textColor="conf.red.500">
+          Day {index + 1}
+        </Heading>
+        <Text textColor="#79CFAF">{singleTab && singleTab.date}</Text>
+      </VStack>
     </Tab>
   );
 };

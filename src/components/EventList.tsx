@@ -2,25 +2,30 @@ import { InfoIcon } from "@chakra-ui/icons";
 import {
   Box,
   Center,
-  Heading, Spinner, TabList, TabPanels,
-  Tabs, VStack
+  Heading,
+  Spinner,
+  TabList,
+  TabPanels,
+  Tabs,
+  VStack,
 } from "@chakra-ui/react";
 import { useQuery } from "react-query";
-import { getEvents } from "../API/getEvents";
-import { SingleEvent } from "./SingleEvent";
+import { getAll } from "../API/getAll";
+import { DayType } from "../API/models/DayType";
+import { SingleDay } from "./SingleDay";
 import { SingleTab } from "./SingleTab";
 
 export const EventList = () => {
-  const query = useQuery("events", getEvents);
+  const daysQuery = useQuery("days", () => getAll("days"));
   return (
-    <Box bgColor={"black"}>
+    <Box mb="2em" >
       <>
-        {!query.error && query.isLoading && (
+        {!daysQuery.error && daysQuery.isLoading && (
           <Center>
             <Spinner size={"xl"} mt="10em" color="conf.red" />
           </Center>
         )}
-        {!query.isLoading && query.error && (
+        {!daysQuery.isLoading && daysQuery.error && (
           <Center>
             <Box
               m="5em"
@@ -39,11 +44,11 @@ export const EventList = () => {
             </Box>
           </Center>
         )}
-          <Tabs colorScheme={"conf.red"}><Center>
-            <TabList  >
-              
-              {query.data &&
-                query.data.map((singleTab: any, index: number) => {
+        <Tabs  variant={"line"} colorScheme={"conf.red"}>
+          <Center>
+            <TabList >
+              {daysQuery.data &&
+                daysQuery.data.map((singleTab: DayType, index: number) => {
                   return (
                     <SingleTab
                       singleTab={singleTab}
@@ -52,17 +57,16 @@ export const EventList = () => {
                     />
                   );
                 })}
-            </TabList></Center>
+            </TabList>
+          </Center>
 
-            <TabPanels>
-              {query.data &&
-                query.data.map((event: any, index: number) => {
-                  return (
-                    <SingleEvent event={event} key={"singleEvent" + index} />
-                  );
-                })}
-            </TabPanels>
-          </Tabs>
+          <TabPanels >
+            {daysQuery.data &&
+              daysQuery.data.map((day: DayType, index: number) => {
+                return <SingleDay day={day} key={"singleDay" + index} />;
+              })}
+          </TabPanels>
+        </Tabs>
       </>
     </Box>
   );

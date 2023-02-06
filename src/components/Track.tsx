@@ -21,7 +21,7 @@ export const Track = ({ track }: { track: TrackType }) => {
         <HStack>
           <TimeIcon/>
           <Text fontWeight={"bold"} fontSize="1.5em" mr={"1em"} minW="fit-content">
-            {track.hour}
+            {track.startHour}-{track.endHour}
           </Text>
         </HStack>
         <Image mx="1em" w={["10em","15em","15em","20em","10em",]} h={["10em","15em","15em","20em","10em",]} rounded={"lg"} src={track.image}></Image>

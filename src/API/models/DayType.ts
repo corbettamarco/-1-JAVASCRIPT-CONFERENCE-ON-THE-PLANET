@@ -1,7 +1,6 @@
-import { TrackType } from "./TrackType";
 
 export type DayType = {
     id: number,
+    eventId: number,
     date: string,
-    tracks: TrackType[]
 };

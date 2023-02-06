@@ -1,20 +1,27 @@
+import { InfoIcon } from "@chakra-ui/icons";
 import {
+  Box,
   Card,
   CardBody,
   Center,
   Heading,
   Image,
   SimpleGrid,
+  Spinner,
   Stack,
   Text,
+  VStack,
 } from "@chakra-ui/react";
-import { useQuery } from "react-query";
-import { getAll } from "../API/getAll";
 import { SpeakerType } from "../API/models/SpeakerType";
+import { useAll } from "../hooks/useAll";
 
 export const Speakers = () => {
-  const speakersQuery = useQuery("speakers", () => getAll("speakers"));
+  const { requestedQuery } = useAll(
+    "speakers",
+    "speakers?eventId=1"
+  );
 
+  const speakersQuery: SpeakerType[]= requestedQuery.data
   return (
     <>
       <Center mb="1em" textColor={"white"}>
@@ -22,10 +29,36 @@ export const Speakers = () => {
           SPEAKERS
         </Heading>
       </Center>
+      
+      {!requestedQuery.error && requestedQuery.isLoading && (
+        <Center>
+          <Spinner size={"xl"} mt="10em" color="white" />
+        </Center>
+      )}
+      {!requestedQuery.isLoading && requestedQuery.error && (
+        <Center>
+          <Box
+            m="5em"
+            fontSize="5em"
+            mt="2em"
+            p="1em"
+            rounded="xl"
+            bgColor="conf.red"
+          >
+            <VStack>
+              <InfoIcon w="2xl" textColor={"conf.red"} />
+              <Heading textColor={"conf.red"}>
+                Si è verificato un Errore
+              </Heading>
+            </VStack>
+          </Box>
+        </Center>
+      )}
+
       <Center>
-        <SimpleGrid spacing={2} columns={[1, 1, 3, 3, 5]}>
-          {speakersQuery.data &&
-            speakersQuery.data.map((speaker: SpeakerType, index: number) => {
+        <SimpleGrid spacing={2} columns={[1, 1, 3, 3, 4]}>
+          {speakersQuery &&
+            speakersQuery.map((speaker: SpeakerType, index: number) => {
               return (
                 <Card
                   key={"speaker" + index}
@@ -34,7 +67,7 @@ export const Speakers = () => {
                   mx="1em"
                   my="1em"
                   h="30em"
-                  >
+                >
                   <Image
                     borderTopRadius={"md"}
                     src={speaker.image}

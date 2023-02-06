@@ -4,20 +4,23 @@ import {
   Center,
   Flex,
   Heading,
-  Spinner, TabList,
+  Spinner,
+  TabList,
   TabPanels,
   Tabs,
-  VStack
+  VStack,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import { useQuery } from "react-query";
-import { getAll } from "../API/getAll";
 import { DayType } from "../API/models/DayType";
+import { useAll } from "../hooks/useAll";
 import { SingleDay } from "./SingleDay";
 import { SingleTab } from "./SingleTab";
 
 export const EventList = () => {
-  const daysQuery = useQuery("days", () => getAll("days"));
+  const { requestedQuery: daysQuery } = useAll("days", "days?eventId=1");
+
+  const days: DayType[] = daysQuery.data;
+
   const [selected, setselected] = useState<number>(0);
   return (
     <Box mb="2em">
@@ -46,12 +49,15 @@ export const EventList = () => {
             </Box>
           </Center>
         )}
-        <Tabs variant={"line"} >
+        <Tabs variant={"line"}>
           <Center>
             <TabList borderBottomWidth={"0"}>
-              <Flex minW="90vw" direction={["column", "column","row", "row"]}>
-                {daysQuery.data &&
-                  daysQuery.data.map((singleTab: DayType, index: number) => {
+              <Flex
+                minW={["90vw", "90vw", "auto", "auto"]}
+                direction={["column", "column", "row", "row"]}
+              >
+                {days &&
+                  days.map((singleTab: DayType, index: number) => {
                     return (
                       <SingleTab
                         singleTab={singleTab}
@@ -67,8 +73,8 @@ export const EventList = () => {
           </Center>
 
           <TabPanels>
-            {daysQuery.data &&
-              daysQuery.data.map((day: DayType, index: number) => {
+            {days &&
+              days.map((day: DayType, index: number) => {
                 return <SingleDay day={day} key={"singleDay" + index} />;
               })}
           </TabPanels>

@@ -1,5 +1,6 @@
-GET http://localhost:3000/days HTTP/1.1
+
+GET http://localhost:3005/events/1 HTTP/1.1
 ####
 
-GET http://localhost:3000/speakers HTTP/1.1
+GET http://localhost:3005/speakers HTTP/1.1
 ####

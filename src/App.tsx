@@ -1,4 +1,4 @@
-import { Box, Spacer } from "@chakra-ui/react";
+import { Spacer } from "@chakra-ui/react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import "./App.css";
 import { AboveTheFold } from "./components/AboveTheFold";
@@ -12,13 +12,13 @@ function App() {
   return (
     <>
       <QueryClientProvider client={queryClient}>
-        <Box bgColor={"blackAlpha.900"}>
+        < >
           <Navbar />
           <AboveTheFold />
           <EventList />
           <Spacer color={"white"} my="1em" borderWidth="1px"/>
           <Speakers />
-        </Box>
+        </>
       </QueryClientProvider>
     </>
   );

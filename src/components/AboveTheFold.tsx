@@ -3,22 +3,24 @@ import { Box, Center, Heading, Stack, Text } from "@chakra-ui/react";
 export const AboveTheFold = () => {
   return (
     <Center>
-      <Box mx="2em" mt="2em">
+      <Box mx="2em" >
         <Heading
           textAlign={"center"}
           textColor={"white"}
           fontWeight={"extrabold"}
           fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
+          letterSpacing="tighter"
         >
           JOIN WORLD'S LARGEST
         </Heading>
         <Heading
           textAlign={"center"}
-          mb="1em"
+          mb="0.5em"
           textColor={"conf.red.500"}
           fontWeight={"extrabold"}
           fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
-          lineHeight={"110%"}
+          lineHeight={"70%"}
+          letterSpacing="tighter"
         >
           JAVASCRIPT COMMUNITY
         </Heading>

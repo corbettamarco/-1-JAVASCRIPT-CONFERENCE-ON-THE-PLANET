@@ -24,11 +24,13 @@ export const Track = ({ track }: { track: TrackType }) => {
             {track.startHour}-{track.endHour}
           </Text>
         </HStack>
+        <Stack
+        direction={["column", "column", "column", "row", "row"]}>
         <Image mx="1em" w={["10em","15em","15em","20em","10em",]} h={["10em","15em","15em","20em","10em",]} rounded={"lg"} src={track.image}></Image>
         <VStack alignItems={"left"} pl={{lg:"1em"}}>
           <Heading>{track.title}</Heading>
           <Text>{track.description}</Text>
-        </VStack>
+        </VStack></Stack>
       </Stack>
     </ListItem>
   );

@@ -32,7 +32,7 @@ export const Speakers = () => {
       
       {!requestedQuery.error && requestedQuery.isLoading && (
         <Center>
-          <Spinner size={"xl"} mt="10em" color="white" />
+          <Spinner size={"xl"} m="10em" color="white" />
         </Center>
       )}
       {!requestedQuery.isLoading && requestedQuery.error && (
@@ -43,11 +43,10 @@ export const Speakers = () => {
             mt="2em"
             p="1em"
             rounded="xl"
-            bgColor="conf.red"
           >
             <VStack>
-              <InfoIcon w="2xl" textColor={"conf.red"} />
-              <Heading textColor={"conf.red"}>
+              <InfoIcon w="2xl" textColor={"conf.red.500"} />
+              <Heading textColor={"conf.red.500"}>
                 Si è verificato un Errore
               </Heading>
             </VStack>

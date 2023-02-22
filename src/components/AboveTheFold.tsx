@@ -7,17 +7,17 @@ export const AboveTheFold = () => {
     "event",
     "events/1"
   );
-
   const eventQuery: EventType= requestedQuery.data
-
+  const errorQuery = requestedQuery.error instanceof Error
+  
   return (
     <Center>
-      <Box mx="2em" >
+      <Box mx="2em"  mb="1em" textAlign={"justify"}>
         <Heading
           textAlign={"center"}
           textColor={"white"}
           fontWeight={"extrabold"}
-          fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
+          fontSize={{ base: "2xl", sm: "3xl", md: "6xl" }}
           letterSpacing="tighter"
         >
           JOIN WORLD'S LARGEST
@@ -27,7 +27,7 @@ export const AboveTheFold = () => {
           mb="0.5em"
           textColor={"conf.red.500"}
           fontWeight={"extrabold"}
-          fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
+          fontSize={{ base: "2xl", sm: "3xl", md: "6xl" }}
           lineHeight={"70%"}
           letterSpacing="tighter"
         >
@@ -40,6 +40,8 @@ export const AboveTheFold = () => {
           alignSelf={"center"}
           position={"relative"}
         >
+          
+          <p>{errorQuery}</p>
           <Text textColor={"white"} textAlign="center">
            {eventQuery && eventQuery.desc}
           </Text>

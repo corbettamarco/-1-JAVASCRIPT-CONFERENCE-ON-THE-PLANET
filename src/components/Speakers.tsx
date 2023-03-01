@@ -10,18 +10,16 @@ import {
   Spinner,
   Stack,
   Text,
-  VStack,
+  VStack
 } from "@chakra-ui/react";
+import { ParamsEnum } from "../API/models/ParamsEnum";
 import { SpeakerType } from "../API/models/SpeakerType";
 import { useAll } from "../hooks/useAll";
 
 export const Speakers = () => {
-  const { requestedQuery } = useAll(
-    "speakers",
-    "speakers?eventId=1"
-  );
+  const { requestedQuery } = useAll("speakers", ParamsEnum.speakers);
 
-  const speakersQuery: SpeakerType[]= requestedQuery.data
+  const speakersQuery: SpeakerType[] = requestedQuery.data;
   return (
     <>
       <Center mb="1em" textColor={"white"}>
@@ -29,7 +27,7 @@ export const Speakers = () => {
           SPEAKERS
         </Heading>
       </Center>
-      
+
       {!requestedQuery.error && requestedQuery.isLoading && (
         <Center>
           <Spinner size={"xl"} m="10em" color="white" />
@@ -37,13 +35,7 @@ export const Speakers = () => {
       )}
       {!requestedQuery.isLoading && requestedQuery.error && (
         <Center>
-          <Box
-            m="5em"
-            fontSize="5em"
-            mt="2em"
-            p="1em"
-            rounded="xl"
-          >
+          <Box m="5em" fontSize="5em" mt="2em" p="1em" rounded="xl">
             <VStack>
               <InfoIcon w="2xl" textColor={"conf.red.500"} />
               <Heading textColor={"conf.red.500"}>

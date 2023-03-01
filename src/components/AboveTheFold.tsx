@@ -1,11 +1,12 @@
 import { Box, Center, Heading, Stack, Text } from "@chakra-ui/react";
 import { EventType } from "../API/models/EventType";
+import { ParamsEnum } from "../API/models/ParamsEnum";
 import { useAll } from "../hooks/useAll";
 
 export const AboveTheFold = () => {
   const { requestedQuery} = useAll(
     "event",
-    "events/1"
+    ParamsEnum.aboveTheFold
   );
   const eventQuery: EventType= requestedQuery.data
   const errorQuery = requestedQuery.error instanceof Error

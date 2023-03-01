@@ -1,5 +1,6 @@
 import { Center, List, TabPanel } from "@chakra-ui/react";
 import { DayType } from "../API/models/DayType";
+import { ParamsEnum } from "../API/models/ParamsEnum";
 import { TrackType } from "../API/models/TrackType";
 import { useAll } from "../hooks/useAll";
 import { Track } from "./Track";
@@ -11,7 +12,7 @@ type SingleDayProps = {
 export const SingleDay = ({ day }: SingleDayProps) => {
   const { requestedQuery } = useAll(
     `tracks${day.id}`,
-    `tracks?eventId=1&dayId=${day.id}&_sort=startHour&_order=asc`
+    ParamsEnum.singleDay1 + day.id + ParamsEnum.singleDay2
   );
 
   const tracksQuery: TrackType[] = requestedQuery.data;

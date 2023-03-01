@@ -8,16 +8,17 @@ import {
   TabList,
   TabPanels,
   Tabs,
-  VStack,
+  VStack
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { DayType } from "../API/models/DayType";
+import { ParamsEnum } from "../API/models/ParamsEnum";
 import { useAll } from "../hooks/useAll";
 import { SingleDay } from "./SingleDay";
 import { SingleTab } from "./SingleTab";
 
 export const EventList = () => {
-  const { requestedQuery: daysQuery } = useAll("days", "days?eventId=1");
+  const { requestedQuery: daysQuery } = useAll("days", ParamsEnum.eventList);
 
   const days: DayType[] = daysQuery.data;
 

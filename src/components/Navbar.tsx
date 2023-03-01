@@ -1,9 +1,22 @@
-import { Box, Flex, Heading, HStack, Image } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  Heading,
+  HStack,
+  Image,
+  Spacer,
+  Spinner,
+} from "@chakra-ui/react";
+import { Link, Outlet, useMatch, useNavigation } from "react-router-dom";
 
 export const Navbar = () => {
+  const isSpeakers = useMatch("/speakers");
+  const navigation = useNavigation();
+
   return (
     <>
-      <Box py="1em"  mx="1em" zIndex={"999"} position={"sticky"} top="0">
+      <Box py="1em" mx="1em" zIndex={"999"} position={"sticky"} top="0">
         <Flex h={16}>
           <HStack my="1em" textAlign={"center"}>
             <Image
@@ -23,8 +36,17 @@ export const Navbar = () => {
               JSWORLD<br></br> CONFERENCE
             </Heading>
           </HStack>
+          <Spacer />
+          <Button>
+            {isSpeakers ? (
+              <Link to={"/"}>Home</Link>
+            ) : (
+              <Link to={"/speakers"}>Speakers</Link>
+            )}
+          </Button>
         </Flex>
       </Box>
+      <Box>{navigation.state === "loading" ? <Spinner /> : <Outlet />}</Box>
     </>
   );
 };

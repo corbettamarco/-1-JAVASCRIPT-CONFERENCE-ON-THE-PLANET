@@ -15,7 +15,7 @@ const myMock: DayType = {
 
 describe("Test SingleTab", () => {
   test("titolo e data", () => {
-    // Mock di useAll hook per ritornare dati
+    // Mock di useAll per ritornare dati
     (useAll as jest.Mock).mockReturnValue({
       //indicare il tipo per evitare errori typescript
       requestedQuery: {
@@ -39,7 +39,7 @@ describe("Test SingleTab", () => {
     expect(screen.getByText(/22-02-2023/i)).toBeInTheDocument();
   });
 
-  test("setSelected con numero corretto", () => {
+  test("setSelected con numero corretto al click", () => {
 
     (useAll as jest.Mock).mockReturnValueOnce({
       requestedQuery: {
@@ -58,7 +58,7 @@ describe("Test SingleTab", () => {
         />
       </Tabs>
     );
-    screen.getByRole("tab").click(); //un tag TAB ha il ruolo tab
+    screen.getByRole("tab").click(); //un tag Tab ha il ruolo tab
     expect(setSelected).toHaveBeenCalledWith(0);
   });
 });

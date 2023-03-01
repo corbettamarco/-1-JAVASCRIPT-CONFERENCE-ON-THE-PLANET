@@ -8,14 +8,6 @@ jest.mock("../hooks/useAll");
 describe("Test Componente EventList", () => {
   const mockedUseAll = useAll as jest.MockedFunction<any>;
 
-  test("rendering dello spinner durante il caricamento", () => {
-    mockedUseAll.mockReturnValue({ requestedQuery: { isLoading: true } });
-
-    render(<EventList />);
-
-    expect(screen.getByText(/Loading.../s)).toBeInTheDocument();
-  });
-
   test("rendering delle tabs alla fine del caricamento", () => {
     const days: DayType[] = [
       { id: 1, date: "2022-01-01", eventId: 1 },
@@ -33,6 +25,14 @@ describe("Test Componente EventList", () => {
     expect(screen.getByText("2022-01-01")).toBeInTheDocument();
   });
 
+  test("rendering dello spinner durante il caricamento", () => {
+    mockedUseAll.mockReturnValue({ requestedQuery: { isLoading: true } });
+
+    render(<EventList />);
+
+    expect(screen.getByText(/Loading.../s)).toBeInTheDocument();
+  });
+
   test("rendering del messaggio di errore", () => {
     const error = new Error("Errore nel caricamento");
 
@@ -46,20 +46,5 @@ describe("Test Componente EventList", () => {
       screen.getByRole("heading", { name: /Si è verificato un Errore/i })
     ).toBeInTheDocument();
     expect(screen.getByText(/si è verificato un errore/i)).toBeInTheDocument();
-  });
-
-  test("rendering dei dati corretti", () => {
-    const days: DayType[] = [
-      { id: 1, date: "2022-01-01", eventId: 1 },
-      { id: 2, date: "2022-12-25", eventId: 1 },
-    ];
-
-    mockedUseAll.mockReturnValue({
-      requestedQuery: { isLoading: false, data: days },
-    });
-
-    render(<EventList />);
-
-    expect(screen.getByText("2022-01-01")).toBeInTheDocument();
   });
 });

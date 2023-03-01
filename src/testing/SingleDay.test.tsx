@@ -17,8 +17,8 @@ const trackMock1: TrackType = {
   dayId: 1,
   startHour: "09:04",
   endHour: "10:30",
-  title: "title test 1",
-  description: "desc est 1",
+  title: "test 1",
+  description: "test 1",
   image:
     "https://images.jsworldconference.com/Zz_Ym_Cfi_Z_400x400_2_Joe_Hart_e1f62002a8.jpg?width=100",
 };
@@ -29,8 +29,8 @@ const trackMock2: TrackType = {
   dayId: 1,
   startHour: "10:04",
   endHour: "11:30",
-  title: "title test 2",
-  description: "desc est 2",
+  title: "test 2",
+  description: "test 2",
   image:
     "https://images.jsworldconference.com/Zz_Ym_Cfi_Z_400x400_2_Joe_Hart_e1f62002a8.jpg?width=100",
 };

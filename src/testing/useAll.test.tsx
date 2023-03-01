@@ -7,28 +7,47 @@ import { useAll } from "../hooks/useAll";
 
 jest.mock("axios");
 
-test("useAll test", async () => {
-  const eventList: DayType[] = [
-    {
-      id: 1,
-      eventId: 1,
-      date: "1 February 2023",
-    },
-  ];
+const queryClient = new QueryClient();
+const wrapper = ({ children }: { children: any }) => (
+  <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+);
 
-  (axios.get as jest.MockedFunction<typeof axios.get>).mockResolvedValueOnce({
-    data: eventList,
+describe("Test UseAll", () => {
+  test("useAll test con query corretta", async () => {
+    const eventList: DayType[] = [
+      {
+        id: 1,
+        eventId: 1,
+        date: "1 February 2023",
+      },
+    ];
+
+    (axios.get as jest.MockedFunction<typeof axios.get>).mockResolvedValueOnce({
+      data: eventList,
+    });
+
+    const { result } = renderHook(() => useAll("days", ParamsEnum.eventList), {
+      wrapper,
+    });
+    await waitFor(() => {
+      expect(result.current.requestedQuery.data).toEqual(eventList);
+    });
   });
-  const queryClient = new QueryClient();
 
-  const wrapper = ({ children }: { children: any }) => (
-    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
-  );
+  test("useAll test con query errata", async () => {
+    const { result } = renderHook(
+      () => useAll("wrong", ParamsEnum.eventList + 111),
+      {
+        wrapper,
+      }
+    );
 
-  const { result } = renderHook(() => useAll("days", ParamsEnum.eventList), {
-    wrapper,
-  });
-  await waitFor(() => {
-    expect(result.current.requestedQuery.data).toEqual(eventList);
+    await waitFor(() => {
+      expect(axios.AxiosError).toBeTruthy();
+    });
+
+    await waitFor(() => {
+      expect(result.current.requestedQuery.data).toBeUndefined();
+    });
   });
 });

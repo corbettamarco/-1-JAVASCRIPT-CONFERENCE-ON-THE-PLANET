@@ -48,7 +48,7 @@ describe("Test Componente EventList", () => {
     expect(screen.getByText(/si è verificato un errore/i)).toBeInTheDocument();
   });
 
-  test("rendering dei dati corretti al click", () => {
+  test("rendering dei dati corretti", () => {
     const days: DayType[] = [
       { id: 1, date: "2022-01-01", eventId: 1 },
       { id: 2, date: "2022-12-25", eventId: 1 },

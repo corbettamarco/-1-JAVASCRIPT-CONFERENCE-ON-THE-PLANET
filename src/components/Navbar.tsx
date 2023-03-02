@@ -37,13 +37,17 @@ export const Navbar = () => {
             </Heading>
           </HStack>
           <Spacer />
-          <Button>
+          <Box>
             {isSpeakers ? (
-              <Link to={"/"}>Home</Link>
+              <Link to={"/"}>
+                <Button>Home</Button>
+              </Link>
             ) : (
-              <Link to={"/speakers"}>Speakers</Link>
+              <Link to={"/speakers"}>
+                <Button>Speakers</Button>
+              </Link>
             )}
-          </Button>
+          </Box>
         </Flex>
       </Box>
       <Box>{navigation.state === "loading" ? <Spinner /> : <Outlet />}</Box>

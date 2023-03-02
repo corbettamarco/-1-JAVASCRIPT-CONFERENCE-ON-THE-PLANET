@@ -5,14 +5,14 @@ import { TrackType } from "../API/models/TrackType";
 import { useAll } from "../hooks/useAll";
 import { Track } from "./Track";
 
-type SingleDayProps = {
+type SingleDayTracksProps = {
   day: DayType;
 };
 
-export const SingleDay = ({ day }: SingleDayProps) => {
+export const SingleDayTracks = ({ day }: SingleDayTracksProps) => {
   const { requestedQuery } = useAll(
     `tracks${day.id}`,
-    ParamsEnum.singleDay1 + day.id + ParamsEnum.singleDay2
+    ParamsEnum.singleDayTracks1 + day.id + ParamsEnum.singleDayTracks2
   );
 
   const tracksQuery: TrackType[] = requestedQuery.data;

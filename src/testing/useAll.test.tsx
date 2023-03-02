@@ -9,7 +9,7 @@ jest.mock("axios");
 
 const queryClient = new QueryClient();
 const wrapper = ({ children }: { children: any }) => (
-  <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+ <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
 );
 
 describe("Test UseAll", () => {

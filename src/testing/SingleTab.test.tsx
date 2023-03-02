@@ -1,8 +1,9 @@
-import { render, screen } from "@testing-library/react";
-import { useAll } from "../hooks/useAll";
-import { SingleTab } from "../components/SingleTab";
-import { DayType } from "../API/models/DayType";
 import { Tabs } from "@chakra-ui/react";
+import { render, screen } from "@testing-library/react";
+import { BrowserRouter } from "react-router-dom";
+import { DayType } from "../API/models/DayType";
+import { SingleTab } from "../components/SingleTab";
+import { useAll } from "../hooks/useAll";
 
 // Crea un mock di useAll
 jest.mock("../hooks/useAll");
@@ -14,7 +15,7 @@ const myMock: DayType = {
 };
 
 describe("Test SingleTab", () => {
-  test("titolo e data", () => {
+  test("titolo e data", async () => {
     // Mock di useAll per ritornare dati
     (useAll as jest.Mock).mockReturnValue({
       //indicare il tipo per evitare errori typescript
@@ -32,7 +33,8 @@ describe("Test SingleTab", () => {
           setSelected={setSelected}
           singleTab={myMock}
         />
-      </Tabs>
+      </Tabs>,
+      { wrapper: BrowserRouter }
     );
 
     expect(screen.getByText(/DAY 1/i)).toBeInTheDocument();
@@ -40,7 +42,6 @@ describe("Test SingleTab", () => {
   });
 
   test("setSelected con numero corretto al click", () => {
-
     (useAll as jest.Mock).mockReturnValueOnce({
       requestedQuery: {
         data: [myMock],
@@ -56,10 +57,10 @@ describe("Test SingleTab", () => {
           setSelected={setSelected}
           singleTab={myMock}
         />
-      </Tabs>
+      </Tabs>,
+      { wrapper: BrowserRouter }
     );
     screen.getByRole("tab").click(); //un tag Tab ha il ruolo tab
     expect(setSelected).toHaveBeenCalledWith(0);
   });
 });
-

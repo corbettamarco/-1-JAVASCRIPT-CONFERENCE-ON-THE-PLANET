@@ -15,7 +15,7 @@ import { DayType } from "../API/models/DayType";
 import { ParamsEnum } from "../API/models/ParamsEnum";
 import { useAll } from "../hooks/useAll";
 import { AboveTheFold } from "./AboveTheFold";
-import { SingleDay } from "./SingleDay";
+import { SingleDayTracks } from "./SingleDayTracks";
 import { SingleTab } from "./SingleTab";
 
 export const EventList = () => {
@@ -73,7 +73,7 @@ export const EventList = () => {
             <TabPanels>
               {days &&
                 days.map((day: DayType, index: number) => {
-                  return <SingleDay day={day} key={"singleDay" + index} />;
+                  return <SingleDayTracks day={day} key={"singleDay" + index} />;
                 })}
             </TabPanels>
           </Tabs>

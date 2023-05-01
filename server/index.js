@@ -9,13 +9,19 @@ const middlewares = jsonServer.defaults();
 app.use('/api', middlewares);
 app.use('/api', router);
 
-// Serve React app from the 'build' folder
-app.use(express.static(path.join(__dirname, '..', 'build')));
+if (process.env.NODE_ENV === "production") {
 
-// Catch-all route to serve the index.html file
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', 'build', 'index.html'));
-});
+  app.use(express.static('client/build'))  // set static folder 
+  
+  app.get('*', (req, res)=> {     
+    res.sendFile(path.resolve(__dirname, 'client', 'build',         
+                  'index.html' )); 
+  })
+  app.get('*', (req, res)=> {     
+    res.sendFile(path.resolve(__dirname, 'client', 'build',         
+                  'index.html' )); 
+  })
+}
 
 const PORT = process.env.PORT || 3001;
 

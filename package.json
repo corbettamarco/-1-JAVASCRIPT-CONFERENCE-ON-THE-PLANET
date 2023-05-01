@@ -30,7 +30,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "serve": "react-scripts start",
+    "json-server" : "json-server --watch db.json --port 3005",
+    "start" : "run-p json-server serve",
     "build": "react-scripts build",
     "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!my-library-dir)/'",
     "eject": "react-scripts eject"

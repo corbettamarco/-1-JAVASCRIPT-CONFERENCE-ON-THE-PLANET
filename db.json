@@ -1,0 +1,110 @@
+{
+    "events": [
+      {
+        "id": 1,
+        "title": "#1 JAVASCRIPT CONFERENCE ON THE PLANET",
+        "dates": "2/8/2023-2/10/2023",
+        "desc": "A 3-day JavaScript Celebration together with 2139 JavaScript Developers. Packed with the Latest JavaScript Updates by Authors, Creators and Experts.\n\n 45 talks to stay on top of the latest topics like Vue3, Angular 15, React 18, Qwik, Vite, AuthZ, Demystifying Protocol Buffers and gRPC. Your chance get in touch with Creators and Maintainers from Vue, Astro, Nuxt, Angular, Vite and Storybook.\n\n You will be provided with technical updates on the largest and hottest technologies alongside case studies on how to tackle your developer challenges. Purchase your 1 day ticket valid on 8th February to be provided with a wide Variety of 15 unique pieces of content helping you make good choices as a JavaScript Developer Join for 3 Full Days on 8,9 and 10 February and also be part of the Largest and Most Special Vue Conference on the Planet, Vuejs Amsterdam attended by the Creator of Vite and Vue, Evan You and Core Team members bringing you the latest in Vue's Eco System."
+      }
+    ],
+  
+    "days": [
+      {
+        "id": 1,
+        "eventId": 1,
+        "date": "1 February 2023"
+      },
+      {
+        "id": 2,
+        "eventId": 1,
+        "date": "2 February 2023"
+      },
+      {
+        "id": 3,
+        "eventId": 1,
+        "date": "3 February 2023"
+      }
+    ],
+  
+    "tracks": [
+      {
+        "id": 1,
+        "eventId": 1,
+        "dayId": 1,
+        "startHour": "09:04",
+        "endHour": "10:30",
+        "title": "Building Age Of Empires 2 with React: Rise of the Browser",
+        "description": "How better to learn about the capabilities of a technology than to do something it was expressly not designed for? What can we learn about the square peg as we mercilessly shove it into the triangular hole? In an attempt to rebuild Age of Empires 2 using React we'll learn about the limitations and possibilities of the tool we use everyday.",
+        "image": "https://images.jsworldconference.com/Zz_Ym_Cfi_Z_400x400_2_Joe_Hart_e1f62002a8.jpg?width=100"
+      },
+      {
+        "id": 2,
+        "eventId": 1,
+        "dayId": 1,
+        "startHour": "10:31",
+        "endHour": "10:58",
+        "title": "State of Storybook 7",
+        "description": "Storybook 7 is our first major release in 2.5 years. During this time we’ve been working hard to bring you a new level of stability, performance improvements and features. We’re excited to share what we’ve been working on. - Refreshed UI and performance (We’ve also refreshed the core UI patterns with subtle visual refinements, UX tweaks, and faster load times) - Interaction testing and test-runner - Simpler setup and maintainability: first-class Vite support, new frameworks integrations like Next.js, etc.",
+        "image": "https://images.jsworldconference.com/Bjorn_Lu_744e0bc916.webp"
+      },
+      {
+        "id": 3,
+        "eventId": 1,
+        "dayId": 2,
+        "startHour": "10:04",
+        "endHour": "10:31",
+        "title": "League of Legends with React",
+        "description": "How better to learn about the capabilities of a technology than to do something it was expressly not designed for? What can we learn about the square peg as we mercilessly shove it into the triangular hole? In an attempt to rebuild Age of Empires 2 using React we'll learn about the limitations and possibilities of the tool we use everyday.",
+        "image": "https://images.jsworldconference.com/Zz_Ym_Cfi_Z_400x400_2_Joe_Hart_e1f62002a8.jpg?width=100"
+      },
+      {
+        "id": 4,
+        "eventId": 1,
+        "dayId": 2,
+        "startHour": "09:04",
+        "endHour": "10:30",
+        "title": "Building Age Of Empires 2 with React: Rise of the Browser",
+        "description": "How better to learn about the capabilities of a technology than to do something it was expressly not designed for? What can we learn about the square peg as we mercilessly shove it into the triangular hole? In an attempt to rebuild Age of Empires 2 using React we'll learn about the limitations and possibilities of the tool we use everyday.",
+        "image": "https://images.jsworldconference.com/Zz_Ym_Cfi_Z_400x400_2_Joe_Hart_e1f62002a8.jpg?width=100"
+      },
+      {
+        "id": 5,
+        "eventId": 1,
+        "dayId": 3,
+        "startHour":"10:32",
+        "endHour": "10:58",
+        "title": "State of Storybook 7",
+        "description": "Storybook 7 is our first major release in 2.5 years. During this time we’ve been working hard to bring you a new level of stability, performance improvements and features. We’re excited to share what we’ve been working on. - Refreshed UI and performance (We’ve also refreshed the core UI patterns with subtle visual refinements, UX tweaks, and faster load times) - Interaction testing and test-runner - Simpler setup and maintainability: first-class Vite support, new frameworks integrations like Next.js, etc.",
+        "image": "https://images.jsworldconference.com/Bjorn_Lu_744e0bc916.webp"
+      },
+      {
+        "id": 6,
+        "eventId": 1,
+        "dayId": 3,
+        "startHour":"10:31",
+        "endHour": "10:58",
+        "title": "State of Storybook 7",
+        "description": "Storybook 7 is our first major release in 2.5 years. During this time we’ve been working hard to bring you a new level of stability, performance improvements and features. We’re excited to share what we’ve been working on. - Refreshed UI and performance (We’ve also refreshed the core UI patterns with subtle visual refinements, UX tweaks, and faster load times) - Interaction testing and test-runner - Simpler setup and maintainability: first-class Vite support, new frameworks integrations like Next.js, etc.",
+        "image": "https://images.jsworldconference.com/Bjorn_Lu_744e0bc916.webp"
+      }
+    ],
+  
+    "speakers": [
+      {
+        "id": 1,
+        "eventId": 1,
+        "image": "https://images.jsworldconference.com/Zz_Ym_Cfi_Z_400x400_2_Joe_Hart_e1f62002a8.jpg?width=1000",
+        "name": "Joe Hart",
+        "specialization": "Age Of Empires 2 with React",
+        "description": "How better to learn about the capabilities of a technology than to do something it was expressl..."
+      },
+      {
+        "id": 2,
+        "eventId": 1,
+        "image": "https://images.jsworldconference.com/Bjorn_Lu_744e0bc916.webp",
+        "name": "Chance Strickland",
+        "specialization": "Remix Core",
+        "description": "Sr. Software Engineer at Shopify. Passionate about design, user experience and accessibility with..."
+      }
+    ]
+  }
